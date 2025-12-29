@@ -1,5 +1,0 @@
-.venv\Scripts\Activate.ps1
-
-{
-    "File": "motion/hiyori_m01.motion3.json"
-}
