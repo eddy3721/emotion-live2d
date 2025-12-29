@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI chat demo</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PIXI & Live2D Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/cubism4.min.js"></script>
+</head>
+
+<body>
+    <div id="app-container">
+        <!-- Live2D Canvas Layer -->
+        <canvas id="live2d-canvas"></canvas>
+
+        <!-- Game-style Dialogue Box -->
+        <div id="dialogue-box">
+            <div id="speaker-name">Hiyori</div>
+            <div id="dialogue-text">（等待輸入...）</div>
+        </div>
+    </div>
+
+    <!-- Testing Controls (Overlay) -->
+    <div id="test-controls">
+        <div class="control-group">
+            <label>語音測試</label>
+            <input type="text" id="test-input" placeholder="輸入文字測試語音..." autocomplete="off" />
+            <button id="test-btn">測試</button>
+        </div>
+        <div class="control-group">
+            <label>AI 對話</label>
+            <input type="text" id="ai-input" placeholder="和 AI 聊天..." autocomplete="off" />
+            <button id="ai-btn">發送</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

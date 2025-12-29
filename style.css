@@ -1,0 +1,166 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); */
+    background-image: url('static/images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+}
+
+#app-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Canvas fills the screen */
+canvas#live2d-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Game-like Dialogue Box */
+#dialogue-box {
+    position: absolute;
+    bottom: 5%;
+    /* Positioned slightly up from bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    max-width: 900px;
+    min-height: 140px;
+    background: rgba(20, 20, 20, 0.85);
+    /* Dark semi-transparent */
+    border: 3px solid #ffffff;
+    border-radius: 15px;
+    padding: 25px 35px;
+    color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+
+    /* Optional: Game UI corner decorations could go here */
+}
+
+#speaker-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ff9a9e;
+    /* Cute pink/peach color for name */
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#dialogue-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+
+    /* Limit to approx 3 lines (1.2rem * 1.6 * 3 = 5.76rem) */
+    max-height: 5.8rem;
+    overflow-y: hidden;
+    word-wrap: break-word;
+    /* Ensure long words don't overflow horizontally */
+}
+
+/* Test Control Panel */
+#test-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-group label {
+    font-size: 0.9rem;
+    color: #ccc;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+#test-input,
+#ai-input {
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    width: 250px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+#test-input::placeholder,
+#ai-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#test-input:focus,
+#ai-input:focus {
+    outline: none;
+    border-color: #ff9a9e;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#test-btn,
+#ai-btn {
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.2s;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#test-btn {
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+}
+
+#ai-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+#test-btn:hover,
+#ai-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+}
+
+#test-btn:active,
+#ai-btn:active {
+    transform: translateY(0);
+}
+
+#test-btn:disabled,
+#ai-btn:disabled {
+    background: #555;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
